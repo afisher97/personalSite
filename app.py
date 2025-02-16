@@ -4,7 +4,12 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def home():
-    return render_template("base.html")
+
+    # Read the 'about.txt' file
+    with open("content/about.txt", "r", encoding="utf-8") as f:
+        about_text = f.read()
+
+    return render_template("base.html", about_text=about_text)
 
 @app.route("/contact", methods=["POST"])
 def contact():
