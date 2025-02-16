@@ -7,73 +7,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
+  <!-- Wrapper that keeps the site centered and sets up two columns -->
+  <div class="wrapper">
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+        <h1>Your Name</h1>
+        <h2 class="subtitle">Front End Engineer</h2>
+        <p class="intro">
+            I build accessible, pixel-perfect digital experiences for the web.
+        </p>
+        <nav>
+            <ul>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#experience">EXPERIENCE</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            </ul>
+        </nav>
+        </aside>
 
-  <!-- Left Sidebar or "Header" Section -->
-  <aside class="sidebar">
-    <h1>Your Name</h1>
-    <h2 class="subtitle">Front End Engineer</h2>
-    <!-- Navigation links -->
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </aside>
+    <!-- Main Content -->
+    <main class="main-content">
+      <section id="about">
+        <h2>About</h2>
+        <p>I'm a developer passionate about crafting accessible, pixel-perfect user interfaces...</p>
+      </section>
 
-  <!-- Main Content Area -->
-  <main class="main-content">
-    <!-- About Section -->
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I'm a developer passionate about crafting accessible, pixel-perfect user interfaces...
-      </p>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="experience-item">
+      <section id="experience">
+        <h2>Experience</h2>
         <h3>Senior Front-End Engineer - Company</h3>
         <p>Details about your role...</p>
-      </div>
-      <div class="experience-item">
-        <h3>Lead Engineer - Another Company</h3>
-        <p>Details about your role...</p>
-      </div>
-      <!-- Add more experience items as needed -->
-    </section>
+      </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project-item">
+      <section id="projects">
+        <h2>Projects</h2>
         <h3>Project Title</h3>
         <p>Description of the project, tech used, etc.</p>
-      </div>
-      <!-- Add more project items as needed -->
-    </section>
+      </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <form action="{{ url_for('contact') }}" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" required>
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="{{ url_for('contact') }}" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" required>
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" required>
 
-        <label for="message">Message:</label>
-        <textarea name="message" id="message" required></textarea>
+          <label for="message">Message:</label>
+          <textarea name="message" id="message" required></textarea>
 
-        <button type="submit">Send</button>
-      </form>
-    </section>
-  </main>
-
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
