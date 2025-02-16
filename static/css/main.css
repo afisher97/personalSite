@@ -14,122 +14,102 @@ body {
 
 /* 1. Wrapper: sets up a max-width and centers it in the browser */
 .wrapper {
-  max-width: 1400px;       /* Adjust as desired for your layout */
-  margin: 0 auto;          /* Centers the .wrapper horizontally in the page */
-  display: flex;           /* Creates a flex container for the two columns */
-  min-height: 100vh;       /* Full viewport height */
+  display: flex;            /* Side-by-side layout */
+  min-height: 100vh;        /* Full viewport height */
+  /* If you want a max width, uncomment:
+     max-width: 1400px;
+     margin: 0 auto;
+  */
 }
 
 /* 2. Sidebar (Left Column) */
-/* Sidebar container */
+/* SIDEBAR (left column) */
 .sidebar {
-  /* Layout:
-     - If you're using flex on a parent container,
-       just ensure this has some width or flex basis.
-     - For vertical spacing from the top, you can add margin-top or extra padding.
-  */
+  flex: 1;                  /* Half the space */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;   /* Left-align text, or 'center' if you prefer */
-  padding: 4rem 2rem;       /* Top/bottom = 4rem, left/right = 2rem */
+  /*
+    'align-items: center' => horizontally center content
+    'justify-content: flex-start' => place it near top
+  */
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;       /* Center text in the sidebar */
+  padding: 4rem 2rem;       /* Adjust top padding to move content up/down */
   background-color: #0a192f;
 }
 
-/* Large Name */
+/* Big Name */
 .sidebar h1 {
-  font-size: 3rem;         /* Big, bold text for your name */
-  font-weight: 700;        /* Make it bold */
-  color: #ffffff;          /* White (or near-white) text */
-  margin-bottom: 0.5rem;   /* Slight spacing below */
+  font-size: 3rem;       /* Large font for name */
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
 }
 
-/* Subtitle (e.g., "Front End Engineer") */
+/* Subtitle */
 .sidebar .subtitle {
-  font-size: 1.5rem;       /* Smaller than name but still prominent */
-  font-weight: 400;        /* Lighter than the name */
-  color: #8892b0;          /* Muted grey-blue color */
-  margin-bottom: 1.5rem;   /* Spacing before the next element */
-}
-
-/* Optional short paragraph (like "I build accessible, pixel-perfect...") */
-.sidebar .intro {
-  font-size: 1.125rem;     /* About 18px (slightly larger than normal) */
-  line-height: 1.5;        /* Comfortable line spacing */
+  font-size: 1.5rem;
+  font-weight: 400;
   color: #8892b0;
-  margin-bottom: 2rem;     /* Space before the nav links */
-  max-width: 250px;        /* Keep the text from stretching too wide */
+  margin-bottom: 1.5rem;
 }
 
-/* Navigation (ABOUT / EXPERIENCE / PROJECTS) */
+/* Short paragraph below subtitle */
+.sidebar .intro {
+  font-size: 1.125rem;   /* ~18px */
+  line-height: 1.5;
+  color: #8892b0;
+  max-width: 250px;      /* Keep it from going too wide */
+  margin-bottom: 2rem;
+}
+
+/* Nav links */
 .sidebar nav ul {
-  list-style: none;        /* Remove bullets */
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .sidebar nav ul li {
-  margin: 1.25rem 0;       /* Spacing between each link */
-  position: relative;      /* So we can position a line or icon if desired */
+  margin: 1.25rem 0;
 }
 
-/* Horizontal line to the left of each link (mimicking Brittany's style) */
-.sidebar nav ul li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 1.5rem;           /* Length of the line */
-  height: 1px;
-  background-color: #8892b0;
-  transform: translateY(-50%);
-}
-
-/* Links themselves */
+/* Adjust link styling to your taste */
 .sidebar nav ul li a {
-  display: inline-block;
-  padding-left: 2rem;      /* Space to the left for the line */
-  text-decoration: none;
-  font-size: 1.125rem;     /* ~18px text size */
   color: #8892b0;
+  font-size: 1.125rem;
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
-/* Hover effect */
 .sidebar nav ul li a:hover {
-  color: #64ffda;          /* Accent color on hover */
-}
-
-/* 3. Main Content (Right Column) */
-.main-content {
-  flex: 1;                 /* The other half of the layout */
-  display: flex;           /* So we can center .content-inner easily */
-  align-items: center;     /* Vertical centering if desired */
-  padding: 2rem;
-}
-
-/* 4. Inner content container to limit text width and center it */
-.content-inner {
-  max-width: 700px;        /* Limit text width so it's closer to the center */
-  margin: 0 auto;
-  width: 100%;
-}
-
-/* Headings for sections */
-.main-content h2 {
-  margin-bottom: 1rem;
   color: #64ffda;
 }
 
-/* Some spacing for each section */
+/* MAIN CONTENT (right column) */
+.main-content {
+  flex: 1;                /* Other half of the space */
+  padding: 4rem 2rem;     /* Same top padding for balance */
+  color: #ccd6f6;
+  /* If you want narrower text, wrap content in .content-inner with max-width. */
+}
+
+.main-content h2 {
+  color: #64ffda;
+  margin-bottom: 1rem;
+}
+
+/* Spacing between sections */
 .main-content section {
   margin-bottom: 3rem;
 }
 
-/* Contact form styling */
+/* CONTACT FORM */
 form {
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  max-width: 400px;       /* limit width of the form */
 }
 
 form label {
@@ -159,21 +139,15 @@ form button:hover {
   background-color: #52ccaf;
 }
 
-/* 5. Responsive adjustments */
+/* RESPONSIVE: stack columns on small screens */
 @media (max-width: 768px) {
   .wrapper {
-    flex-direction: column; /* Stack sidebar above main content on small screens */
+    flex-direction: column;
   }
-
   .sidebar,
   .main-content {
     flex: none;
     width: 100%;
-    padding: 1rem;
-  }
-
-  /* Adjust text centering or spacing if desired on mobile */
-  .content-inner {
-    max-width: 100%;
+    padding: 2rem;
   }
 }
