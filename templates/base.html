@@ -6,10 +6,34 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
+
 <body>
-  <!-- Wrapper that keeps the site centered and sets up two columns -->
+
+    <!-- 1) Mobile Header (hidden on desktop, shown on mobile) -->
+  <header class="mobile-header" id="mobileHeader">
+    <div class="mobile-logo">Your Name</div>
+
+      <!-- Hamburger icon -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Mobile Nav Menu (toggled by hamburger) -->
+    <nav class="mobile-nav" id="mobileNav">
+      <ul>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Wrapper for Desktop Layout - keeps the site centered and sets up two columns -->
   <div class="wrapper">
       <div class="site-content">
+
         <!-- Left Sidebar -->
         <aside class="sidebar">
             <h1>Your Name</h1>
@@ -63,6 +87,8 @@
   </div>
 </body>
 
+<!-- Scripts -->
+<script src="{{ url_for('static', filename='js/mobile-nav.js') }}"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("main section");
