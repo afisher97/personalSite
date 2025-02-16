@@ -9,55 +9,61 @@
 <body>
   <!-- Wrapper that keeps the site centered and sets up two columns -->
   <div class="wrapper">
-    <!-- Left Sidebar -->
-    <aside class="sidebar">
-        <h1>Your Name</h1>
-        <h2 class="subtitle">Front End Engineer</h2>
-        <p class="intro">I build accessible, pixel-perfect digital experiences for the web.</p>
-        <nav>
-            <ul>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#experience">EXPERIENCE</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            </ul>
-        </nav>
-        </aside>
+      <div class="site-content">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <h1>Your Name</h1>
+            <h2 class="subtitle">Front End Engineer</h2>
+            <p class="intro">I build accessible, pixel-perfect digital experiences for the web.</p>
+            <nav>
+             <ul>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#experience">EXPERIENCE</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                </ul>
+            </nav>
+            </aside>
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <section id="about">
-        <h2>About</h2>
-        <p>I'm a developer passionate about crafting accessible, pixel-perfect user interfaces...</p>
-      </section>
+        <!-- Main Content -->
+        <main class="main-content">
+        <section id="about">
+            <h2>About</h2>
+            <p>Today in the Vatican the Eucharist was celebrated, dedicated in particular to the artists who have come from various parts of the world to experience the Jubilee days," the cardinal said, relaying the pope's words. "I thank the Dicastery for Culture and Education for the preparation of this appointment, which reminds us of the importance of art as a universal language that spreads beauty and unites peoples, contributing to bringing harmony into the world and silencing every cry of war."
 
-      <section id="experience">
-        <h2>Experience</h2>
-        <h3>Senior Front-End Engineer - Company</h3>
-        <p>Details about your role...</p>
-      </section>
+    Thanking the artists participating in the service, Francis added via the prepared homily, "I would have liked to be among you but, as you know, I am here at the Gemelli Hospital because I still need some treatment for my bronchitis."
 
-      <section id="projects">
-        <h2>Projects</h2>
-        <h3>Project Title</h3>
-        <p>Description of the project, tech used, etc.</p>
-      </section>
+    "Thank you for the affection, prayer and closeness with which you are accompanying me in these days, and I would like to thank the doctors and health care workers in this hospital for their care: they do such a valuable and tiring job, let us support them with prayer," the pope wrote.</p>
+        </section>
 
-      <section id="contact">
-        <h2>Contact Me</h2>
-        <form action="{{ url_for('contact') }}" method="POST">
-          <label for="name">Name:</label>
-          <input type="text" name="name" id="name" required>
+        <section id="experience">
+            <h2>Experience</h2>
+            <h3>Senior Front-End Engineer - Company</h3>
+            <p>Details about your role...</p>
+        </section>
 
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email" required>
+        <section id="projects">
+            <h2>Projects</h2>
+            <h3>Project Title</h3>
+            <p>Description of the project, tech used, etc.</p>
+        </section>
 
-          <label for="message">Message:</label>
-          <textarea name="message" id="message" required></textarea>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form action="{{ url_for('contact') }}" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required>
 
-          <button type="submit">Send</button>
-        </form>
-      </section>
-    </main>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" required></textarea>
+
+            <button type="submit">Send</button>
+            </form>
+        </section>
+        </main>
+      </div>
   </div>
 </body>
 </html>

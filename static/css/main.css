@@ -14,15 +14,22 @@ body {
 
 /* 1. Wrapper: sets up a max-width and centers it in the browser */
 .wrapper {
-  display: flex;            /* Side-by-side layout */
-  min-height: 100vh;        /* Full viewport height */
+  max-width: 1400px;   /* Or 1200px, 1600px, etc. */
+  margin: 0 auto;      /* Center this container in the page */
+  padding: 0 3rem;     /* Horizontal gutters: left/right = 3rem each */
+
   /* If you want a max width, uncomment:
      max-width: 1400px;
      margin: 0 auto;
   */
 }
+.site-content {
+  display: flex;        /* or display: grid; */
+  min-height: 100vh;    /* full screen height if desired */
+  /* By default, this arranges columns side-by-side. */
+}
 
-/* 2. Sidebar (Left Column) */
+
 /* SIDEBAR (left column) */
 .sidebar {
   flex: 1;                  /* Half the space */
@@ -35,7 +42,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   text-align: center;       /* Center text in the sidebar */
-  padding: 4rem 2rem;       /* Adjust top padding to move content up/down */
+  padding: 4rem 1rem;       /* Adjust top padding to move content up/down */
   background-color: #0a192f;
 }
 
@@ -103,7 +110,7 @@ body {
 /* MAIN CONTENT (right column) */
 .main-content {
   flex: 1;                /* Other half of the space */
-  padding: 4rem 2rem;     /* Same top padding for balance */
+  padding: 4rem 1rem;     /* Same top padding for balance */
   color: #ccd6f6;
   /* If you want narrower text, wrap content in .content-inner with max-width. */
 }
@@ -154,7 +161,7 @@ form button:hover {
 
 /* RESPONSIVE: stack columns on small screens */
 @media (max-width: 768px) {
-  .wrapper {
+  .site-content {
     flex-direction: column;
   }
   .sidebar,
@@ -162,5 +169,18 @@ form button:hover {
     flex: none;
     width: 100%;
     padding: 2rem;
+    margin: 0;         /* remove side margins */
+
+  }
+}
+@media (max-width: 1024px) {
+  .wrapper {
+    padding: 0 2rem; /* narrower gutters on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 0 1rem; /* minimal gutters on phones */
   }
 }
