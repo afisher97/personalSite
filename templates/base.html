@@ -15,11 +15,11 @@
             <h1>Your Name</h1>
             <h2 class="subtitle">Front End Engineer</h2>
             <p class="intro">I build accessible, pixel-perfect digital experiences for the web.</p>
-            <nav>
+            <nav class="nav">
              <ul>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#experience">EXPERIENCE</a></li>
-                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#about" class="nav-link active">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
                 </ul>
             </nav>
             </aside>
@@ -62,4 +62,42 @@
       </div>
   </div>
 </body>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("main section");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  // A mapping from section IDs to navLink elements
+  const navLinkMap = {};
+  navLinks.forEach(link => {
+    // e.g. href="#about" -> "about"
+    const sectionId = link.getAttribute("href").replace("#", "");
+    navLinkMap[sectionId] = link;
+  });
+
+  // Intersection Observer
+  const observerOptions = {
+    root: null,       // use the viewport
+    rootMargin: "0px",
+    threshold: 0.5    // trigger when 50% of section is visible
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.id;
+        // Remove 'active' from all nav links
+        navLinks.forEach(link => link.classList.remove("active"));
+        // Add 'active' to the link that matches this section
+        navLinkMap[sectionId].classList.add("active");
+      }
+    });
+  }, observerOptions);
+
+  // Observe each section
+  sections.forEach(section => observer.observe(section));
+});
+</script>
+
 </html>
