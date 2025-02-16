@@ -1,0 +1,126 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #0a192f; /* Dark background */
+  color: #ccd6f6;            /* Light text */
+  display: flex;            /* Use flexbox */
+  min-height: 100vh;        /* Ensure full-height layout */
+  margin: 0;                /* Remove default margin */
+}
+
+/* Sidebar (left panel) */
+.sidebar {
+  flex: 1;                  /* Take up 1 part (50%) of available width */
+  background-color: #0a192f;
+  padding: 2rem;
+}
+
+/* Sidebar headings */
+.sidebar h1 {
+  margin-bottom: 0.5rem;
+  color: #64ffda;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #8892b0;
+  margin-bottom: 2rem;
+}
+
+/* Navigation in sidebar */
+.sidebar nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 1rem;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: #8892b0;
+  transition: color 0.2s ease-in-out;
+}
+
+.sidebar nav ul li a:hover {
+  color: #64ffda;
+}
+
+/* Main content (right panel) */
+.main-content {
+  flex: 1; /* Take up the other 50% */
+  padding: 2rem;
+}
+
+/* Section spacing */
+.main-content section {
+  margin-bottom: 3rem;
+}
+
+/* Headings for sections */
+.main-content h2 {
+  margin-bottom: 1rem;
+  color: #64ffda;
+}
+
+/* Example item styling */
+.experience-item,
+.project-item {
+  margin-bottom: 2rem;
+}
+
+/* Contact form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+form label {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+form input,
+form textarea {
+  padding: 0.5rem;
+  border: 1px solid #8892b0;
+  background-color: #0a192f;
+  color: #ccd6f6;
+}
+
+form button {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: none;
+  background-color: #64ffda;
+  color: #0a192f;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: #52ccaf;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column; /* Stack sidebar and main content */
+  }
+
+  /* When stacked, let each section go full width */
+  .sidebar,
+  .main-content {
+    flex: none;
+    width: 100%;
+    padding: 1rem;
+  }
+}
