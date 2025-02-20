@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: sans-serif;
   background-color: #081526; /* Dark background */
@@ -191,9 +195,102 @@ form button:hover {
   font-weight: bold; /* make it stand out */
 }
 
-html {
-  scroll-behavior: smooth;
+
+
+/* Container for entire experience section */
+#experience {
+  margin-top: 3rem;
 }
+
+/* The outer card that includes date + details */
+.experience-card {
+  background-color: #112240; /* Lighter than main bg */
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover effect for the card */
+.experience-card:hover {
+  background-color: #112d42; /* Slightly lighter/darker shade on hover */
+  transform: translateY(-2px);
+}
+
+/* The inner content: 2 columns on desktop */
+.card-content {
+  display: flex;
+  align-items: flex-start; /* Align date & details at the top */
+}
+
+/* Left side: date */
+.date {
+  width: 120px;        /* or 100px, adjust as desired */
+  text-align: right;   /* align date text on the right edge */
+  margin-right: 2rem;  /* space between date and details */
+  color: #64ffda;      /* accent color */
+  font-size: 0.875rem; /* ~14px */
+  flex-shrink: 0;      /* so it won't shrink on narrower screens */
+}
+
+/* Right side: job details */
+.details {
+  flex: 1; /* take remaining space */
+}
+
+.details h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #ccd6f6; /* or #ffffff */
+  font-size: 1.25rem;
+}
+
+.details p {
+  color: #8892b0;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Skill “bubbles” */
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* space between bubbles */
+}
+
+.skill-list li {
+  background-color: #0a192f;
+  border: 1px solid #64ffda; /* accent border */
+  color: #64ffda;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover on skill bubble (optional) */
+.skill-list li:hover {
+  background-color: #64ffda;
+  color: #0a192f;
+}
+
+/* Responsive: stack date above details on smaller screens */
+@media (max-width: 768px) {
+  .card-content {
+    flex-direction: column;
+  }
+  .date {
+    width: auto;
+    text-align: left;  /* or center, if you prefer */
+    margin-bottom: 1rem;
+  }
+}
+
+
+
 
 
 /* 2) Mobile Header (hidden by default on desktop) */
@@ -250,7 +347,6 @@ html {
 .mobile-nav.show-menu {
   display: flex;
 }
-
 
 
 /* RESPONSIVE: stack columns on small screens */
