@@ -1,0 +1,52 @@
+Notes on color scheme, provided by ChatGPT o3-mini-high
+
+
+1. Dark Navy + Soft Yellow
+
+Background: #0a192f
+
+    This is deep navy, which pairs well with bright accent colors.
+    Alternatively, you can darken it slightly (e.g., #081526) for even more contrast.
+
+Primary Text: #ccd6f6
+
+    A light, cool gray with a hint of blue. Very readable on the dark navy background.
+
+Accent (Yellow): #FFD700
+
+    A classic “golden” yellow. Bold enough to stand out for links, buttons, hover states.
+
+Hover Accent (Lighter Yellow): #FFEC85
+
+    Lighten the accent for a hover effect. This keeps a consistent palette but adds a noticeable change on hover.
+
+Usage
+
+    Links/Buttons: color: #FFD700; (hover: #FFEC85)
+    Headings: Use the primary text color (#ccd6f6) or pure white (#ffffff)
+    Body Text: #ccd6f6
+
+
+
+Why #081526 Works
+
+    High Contrast: Yellow and teal/navy are complementary in terms of warmth/coolness, so yellow stands out well.
+    Professional Yet Modern: Dark navy is a common choice for modern UIs. #081526 is a touch deeper and more teal, giving it a fresh twist.
+    Easy on the Eyes: Dark backgrounds reduce glare, and the subtle hue is more interesting than a plain black.
+
+Other Modern Dark Options
+
+If you ever want to experiment with something else, here are some popular dark “neutrals” that still pair nicely with yellow accents:
+
+    #121212 (Pure “Material” dark): A near-black used in many “night mode” UIs.
+    #1f1f1f (Deep Charcoal): Subtly gray, extremely neutral, great for bright accent colors.
+    #232629 (Dark Gray w/ a hint of blue): Used by GitHub’s dark mode, also pairs well with vibrant hues.
+    #0D1117 (GitHub’s default “dark”): Slightly bluish black, quite modern.
+
+All of these can work with a bright yellow accent—the difference is whether you want a hint of blue/teal (like #081526) or a neutral gray/black background.
+Bottom Line
+
+    #081526 is already a “modern dark” color, especially if you love the subtle teal cast.
+    Bright yellow on top provides the contrast needed to guide the user’s eye and highlight important elements.
+    If you ever want a more “neutral” feel, try a near-black or deep charcoal.
+    Ultimately, use whichever feels right for your brand, taste, and content. If #081526 looks good to you, you can absolutely stick with it!

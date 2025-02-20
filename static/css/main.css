@@ -7,7 +7,7 @@
 
 body {
   font-family: sans-serif;
-  background-color: #0a192f; /* Dark background */
+  background-color: #081526; /* Dark background */
   color: #ccd6f6;            /* Light text */
   margin: 0;                /* Remove default body margin */
 }
@@ -47,7 +47,7 @@ body {
   justify-content: flex-start;
   text-align: center;       /* Center text in the sidebar */
   padding: 4rem 1rem;       /* Adjust top padding to move content up/down */
-  background-color: #0a192f;
+  background-color: #081526;
 }
 
 /* Make a narrower content area for the text, left-aligned */
@@ -69,7 +69,7 @@ body {
   margin-bottom: 2rem;
   font-size: 1.125rem;   /* ~18px */
   line-height: 1.5;
-  color: #8892b0;
+  color: #ccd6f6;
 }
 
 /* Big Name */
@@ -108,7 +108,7 @@ body {
 }
 
 .sidebar nav ul li a:hover {
-  color: #64ffda;
+  color: #ffdf00;
 }
 
 /* MAIN CONTENT (right column) */
@@ -120,7 +120,7 @@ body {
 }
 
 .main-content h2 {
-  color: #64ffda;
+  color: #FFD700;
   margin-bottom: 1rem;
 }
 
@@ -153,14 +153,14 @@ form button {
   margin-top: 1rem;
   padding: 0.75rem;
   border: none;
-  background-color: #64ffda;
+  background-color: #FFD700;
   color: #0a192f;
   cursor: pointer;
   font-weight: bold;
 }
 
 form button:hover {
-  background-color: #52ccaf;
+  background-color: #FFEC85;
 }
 
 
