@@ -13,7 +13,25 @@ body {
   font-family: sans-serif;
   background-color: #081526; /* Dark background */
   color: #ccd6f6;            /* Light text */
+  /* Star image as the background */
+  background-image: url("../images/IMG_9525-stars.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   margin: 0;                /* Remove default body margin */
+}
+
+/* Pseudo-element overlay */
+body::before {
+  content: "";
+  position: fixed; /* so it stays put while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* dark overlay, adjust opacity as needed */
+  pointer-events: none; /* let clicks pass through to the page */
+  z-index: -1;          /* or 0, depending on your layout */
 }
 
 /* 1. Wrapper: sets up a max-width and centers it in the browser */
@@ -51,7 +69,7 @@ body {
   justify-content: flex-start;
   text-align: center;       /* Center text in the sidebar */
   padding: 4rem 1rem;       /* Adjust top padding to move content up/down */
-  background-color: #081526;
+  /*background-color: #081526;*/
 }
 
 /* Make a narrower content area for the text, left-aligned */
@@ -80,7 +98,7 @@ body {
 .sidebar h1 {
   font-size: 3rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #ccd6f6;
   margin-bottom: 0.5rem;
 }
 
@@ -115,6 +133,26 @@ body {
   color: #ffdf00;
 }
 
+
+.sidebar-social {
+  margin-top: auto; /* pushes this element to the bottom */
+  display: flex;
+  gap: 1rem;       /* space between icons */
+}
+
+
+.sidebar-social .social-link {
+  color: #8892b0;         /* default color (muted) */
+  font-size: 1.5rem;     /* icon size, ~24px */
+  transition: color 0.2s;
+  text-decoration: none;  /* remove link underline */
+}
+
+.sidebar-social .social-link:hover {
+  color: #ccd6f6;         /* accent color on hover */
+}
+
+
 /* MAIN CONTENT (right column) */
 .main-content {
   flex: 1;                /* Other half of the space */
@@ -124,7 +162,7 @@ body {
 }
 
 .main-content h2 {
-  color: #FFD700;
+  color: #FFC857;
   margin-bottom: 1rem;
 }
 
@@ -204,7 +242,7 @@ form button:hover {
 
 /* The outer card that includes date + details */
 .experience-card {
-  background-color: #112240; /* Lighter than main bg */
+  /*background-color: #112240; /* Lighter than main bg */
   border-radius: 8px;
   padding: 1.5rem 2rem;
   margin-bottom: 2rem;
@@ -228,7 +266,7 @@ form button:hover {
   width: 120px;        /* or 100px, adjust as desired */
   text-align: right;   /* align date text on the right edge */
   margin-right: 2rem;  /* space between date and details */
-  color: #64ffda;      /* accent color */
+  color: #ccd6f6;      /* accent color */
   font-size: 0.875rem; /* ~14px */
   flex-shrink: 0;      /* so it won't shrink on narrower screens */
 }
@@ -262,34 +300,22 @@ form button:hover {
 }
 
 .skill-list li {
-  background-color: #0a192f;
-  border: 1px solid #64ffda; /* accent border */
-  color: #64ffda;
-  border-radius: 4px;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  /* A light translucent background of accent color */
+  background-color: #081526;  /* ~15% opacity of #FFD700 */
+  border: 1px solid #FCD25A; /* Outline in accent color */
+  color: #FCD25A;            /* Text in accent color */
+  border-radius: 9999px;     /* Very large radius => pill shape */
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;       /* ~14px */
   transition: background-color 0.3s, color 0.3s;
+  cursor: default;           /* or pointer if you want them clickable */
 }
 
 /* Hover on skill bubble (optional) */
 .skill-list li:hover {
-  background-color: #64ffda;
-  color: #0a192f;
+  background-color: #FFD700; /* full yellow background */
+  color: #081526;            /* your dark navy text color */
 }
-
-/* Responsive: stack date above details on smaller screens */
-@media (max-width: 768px) {
-  .card-content {
-    flex-direction: column;
-  }
-  .date {
-    width: auto;
-    text-align: left;  /* or center, if you prefer */
-    margin-bottom: 1rem;
-  }
-}
-
-
 
 
 
@@ -308,17 +334,8 @@ form button:hover {
   font-size: 1.5rem;
   color: #fff;
 }
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-}
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background-color: #8892b0;
-  margin: 4px 0;
-}
+
+
 /* Mobile nav menu hidden by default */
 .mobile-nav {
   display: none;
@@ -354,12 +371,30 @@ form button:hover {
   .site-content {
     flex-direction: column;
   }
+
+  /* Make the layout flow top-to-bottom instead of side-by-side */
+  .layout-container {
+    flex-direction: column;
+  }
+
   .sidebar {
-    display: none; /* Hide sidebar on mobile */
+    flex: initial;         /* or flex: 0 0 auto */
+    width: 100%;
+    position: static;      /* no longer fixed on the side */
+    padding: 1rem;
+    height: auto;
   }
-  .mobile-header {
-    display: flex; /* Show the mobile header */
+
+    /* Hide the nav */
+  .sidebar nav {
+    display: none;
   }
+
+    /* Move social buttons below the intro */
+  .sidebar-social {
+    margin-top: 1rem;
+  }
+
   .wrapper {
     padding: 0 1.5rem; /* narrower gutters on mobile */
   }

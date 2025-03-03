@@ -5,30 +5,13 @@
   <title>My Portfolio</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+/>
 </head>
 
 <body>
-
-    <!-- 1) Mobile Header (hidden on desktop, shown on mobile) -->
-  <header class="mobile-header" id="mobileHeader">
-    <div class="mobile-logo">Your Name</div>
-
-      <!-- Hamburger icon -->
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <!-- Mobile Nav Menu (toggled by hamburger) -->
-    <nav class="mobile-nav" id="mobileNav">
-      <ul>
-        <li><a href="#about" class="mobile-nav-link">About</a></li>
-        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
-        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
-      </ul>
-    </nav>
-  </header>
 
   <!-- Main Wrapper for Desktop Layout - keeps the site centered and sets up two columns -->
   <div class="wrapper">
@@ -36,9 +19,9 @@
 
         <!-- Left Sidebar -->
         <aside class="sidebar">
-            <h1>Your Name</h1>
-            <h2 class="subtitle">Front End Engineer</h2>
-            <p class="intro">I build accessible, pixel-perfect digital experiences for the web.</p>
+            <h1>Avery Fisher</h1>
+            <h2 class="subtitle">Electrical Engineer</h2>
+            <p class="intro">My website, currently in progress.</p>
             <nav class="nav">
              <ul>
                 <li><a href="#about" class="nav-link active">About</a></li>
@@ -46,7 +29,23 @@
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 </ul>
             </nav>
-            </aside>
+
+              <!-- Social icons at bottom -->
+            <div class="sidebar-social">
+                <!-- Font Awesome icons -->
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+        </aside>
+
 
         <!-- Main Content -->
         <main class="main-content">
@@ -67,7 +66,7 @@
                 </div>
                 <!-- Right side: role details -->
                 <div class="details">
-                    <h3>Electrical Engineer II - Raytheon</h3>
+                    <h3>Electrical Engineer II with Honors - Raytheon</h3>
                     <p>
                     Build and test critical test equipment
                     Work closely with cross-functional teams...
@@ -83,6 +82,28 @@
             </div>
 
             <!-- Repeat for other roles... -->
+            <div class="experience-card">
+                <div class="card-content">
+                <!-- Left side: date -->
+                <div class="date">
+                    2020 — 2022
+                </div>
+                <!-- Right side: role details -->
+                <div class="details">
+                    <h3>Electrical Engineer I - Raytheon</h3>
+                    <p>
+                    Build and test critical test equipment
+                    Work closely with cross-functional teams...
+                    </p>
+                    <ul class="skill-list">
+                    <li>Python</li>
+                    <li>RF Testing</li>
+                    <li>Teamwork</li>
+                    <li>MS Office</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
 
         </section>
 
