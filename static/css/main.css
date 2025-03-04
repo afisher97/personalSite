@@ -396,12 +396,12 @@ form button:hover {
   }
 
   .wrapper {
-    padding: 0 1.5rem; /* narrower gutters on mobile */
+    padding: 0 1rem; /* narrower gutters on mobile */
   }
   .main-content {
     flex: none;
     width: 100%;
-    padding: 2rem;
+    padding: 0.5rem;
     margin: 0;         /* remove side margins */
   }
   .nav ul {
@@ -414,6 +414,25 @@ form button:hover {
   }
   /* Possibly reposition the nav with position: fixed; top: 0; etc. */
 }
+
+  /* Experience card section */
+  .card-content {
+    /* Instead of side-by-side columns, stack them */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Override the fixed width and right-aligned text */
+  .date {
+    width: auto;
+    text-align: left;      /* Or center, if you prefer */
+    margin-right: 0;       /* Remove the desktop spacing */
+    margin-bottom: 0.5rem; /* Add a little space below the date */
+  }
+
+
+
 
 
 @media (max-width: 1024px) {
