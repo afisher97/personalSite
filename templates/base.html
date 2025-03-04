@@ -93,7 +93,7 @@
                     <h3>Electrical Engineer I - Raytheon</h3>
                     <p>
                     Build and test critical test equipment
-                    Work closely with cross-functional teams...
+                    Work closely with cross-functional teams and write test procedures. Mostly worked with technicians to troubleshoot hardware and provide decisions on what to do with said hardware. Used that information to improve procedures to increase the technician's independence to reduce the need for an engineer to be at station...
                     </p>
                     <ul class="skill-list">
                     <li>Python</li>
@@ -135,41 +135,6 @@
 
 <!-- Scripts -->
 <script src="{{ url_for('static', filename='js/mobile-nav.js') }}"></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll("main section");
-  const navLinks = document.querySelectorAll(".nav-link");
-
-  // A mapping from section IDs to navLink elements
-  const navLinkMap = {};
-  navLinks.forEach(link => {
-    // e.g. href="#about" -> "about"
-    const sectionId = link.getAttribute("href").replace("#", "");
-    navLinkMap[sectionId] = link;
-  });
-
-  // Intersection Observer
-  const observerOptions = {
-    root: null,       // use the viewport
-    rootMargin: "0px",
-    threshold: 0.5    // trigger when 50% of section is visible
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const sectionId = entry.target.id;
-        // Remove 'active' from all nav links
-        navLinks.forEach(link => link.classList.remove("active"));
-        // Add 'active' to the link that matches this section
-        navLinkMap[sectionId].classList.add("active");
-      }
-    });
-  }, observerOptions);
-
-  // Observe each section
-  sections.forEach(section => observer.observe(section));
-});
-</script>
+<script src="{{ url_for('static', filename='js/scroll-spy.js') }}"></script>
 
 </html>
