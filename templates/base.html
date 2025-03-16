@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My Portfolio</title>
+  <title>Avery Fisher</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -50,12 +50,12 @@
         <!-- Main Content -->
         <main class="main-content">
         <section id="about">
-            <h2>About</h2>
+            <h2></h2> <!-- Placeholder header to get scroll-spy to work correctly -->
             <p>{{ about_text|replace('\n', '<br>')|safe }}</p>
         </section>
 
         <section id="experience">
-            <h2>Experience</h2>
+            <h2></h2> <!-- Placeholder header to get scroll-spy to work correctly -->
 
             <!-- Single card: date + details in one container -->
             <div class="experience-card">
@@ -108,7 +108,7 @@
         </section>
 
         <section id="projects">
-            <h2>Projects</h2>
+            <h2></h2> <!-- Placeholder header to get scroll-spy to work correctly -->
             <h3>Project Title</h3>
             <p>Description of the project, tech used, etc.</p>
         </section>
@@ -134,7 +134,6 @@
 </body>
 
 <!-- Scripts -->
-<script src="{{ url_for('static', filename='js/mobile-nav.js') }}"></script>
 <script src="{{ url_for('static', filename='js/scroll-spy.js') }}"></script>
 
 </html>
