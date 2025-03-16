@@ -220,7 +220,9 @@ form button:hover {
   color: #8892b0; /* default link color */
   text-decoration: none;
   transition: color 0.2s ease;
+
 }
+
 
 /* Hover highlight */
 .nav-link:hover {
@@ -431,6 +433,76 @@ form button:hover {
     margin-right: 0;       /* Remove the desktop spacing */
     margin-bottom: 0.5rem; /* Add a little space below the date */
   }
+
+
+
+  /* CONTACT SECTION STYLES */
+#contact {
+  margin-top: 3rem;
+  max-width: 600px;     /* Limit form width if desired */
+  padding: 1.5rem;
+  /* If you want a subtle background overlay for better contrast:
+     background-color: rgba(17, 34, 64, 0.6);
+     border-radius: 8px;
+  */
+}
+
+#contact h2 {
+  margin-bottom: 1rem;
+  color: #FCD25A;  /* or whatever accent color you use */
+  font-size: 1.75rem;
+}
+
+/* FORM LAYOUT */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* spacing between form elements */
+}
+
+/* LABELS */
+.contact-form label {
+  color: #ccd6f6;  /* or #fff, if you prefer */
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+/* INPUTS & TEXTAREAS */
+.contact-form input,
+.contact-form textarea {
+  background-color: #0b111e; /* a dark shade to match the star theme */
+  color: #ffffff;            /* text color */
+  border: 1px solid #8892b0; /* subtle border, or your accent color */
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-family: inherit;
+  resize: vertical;          /* allow vertical resizing on textarea */
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #FCD25A; /* highlight border on focus */
+  box-shadow: 0 0 5px rgba(252, 210, 90, 0.5); /* optional glow */
+}
+
+/* BUTTON */
+.contact-form button {
+  background-color: #FCD25A; /* accent color */
+  color: #081526;            /* dark text for contrast */
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #ffd83c; /* slightly lighter on hover */
+  transform: translateY(-2px);
+}
 
 
 
