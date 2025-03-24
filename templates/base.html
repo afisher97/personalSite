@@ -51,11 +51,13 @@
         <main class="main-content">
         <section id="about">
             <h2></h2> <!-- Placeholder header to get scroll-spy to work correctly -->
+            <h2 class="section-heading">ABOUT</h2> <!-- Title for mobile, hidden in Desktop view -->
             <p>{{ about_text|replace('\n', '<br>')|safe }}</p>
         </section>
 
         <section id="experience">
             <h2></h2> <!-- Placeholder header to get scroll-spy to work correctly -->
+            <h2 class="section-heading">EXPERIENCE</h2> <!-- Title for mobile, hidden in Desktop view -->
 
             <!-- Single card: date + details in one container -->
             <div class="experience-card">
@@ -115,6 +117,7 @@
 
         <section id="contact">
             <h2></h2> <!-- Placeholder header to get scroll-spy to work correctly -->
+            <h2 class="section-heading">CONTACT</h2> <!-- Title for mobile, hidden in Desktop view -->
             <form
                 class="contact-form"
                 action="https://formspree.io/f/mqapapgy"
@@ -140,5 +143,7 @@
 
 <!-- Scripts -->
 <script src="{{ url_for('static', filename='js/scroll-spy.js') }}"></script>
+
+
 
 </html>
