@@ -343,16 +343,6 @@ form button:hover {
   margin-top: 3rem;
   max-width: 600px;     /* Limit form width if desired */
   padding: 1.5rem;
-  /* If you want a subtle background overlay for better contrast:
-     background-color: rgba(17, 34, 64, 0.6);
-     border-radius: 8px;
-  */
-}
-
-#contact h2 {
-  margin-bottom: 1rem;
-  color: #FCD25A;  /* or whatever accent color you use */
-  font-size: 1.75rem;
 }
 
 /* FORM LAYOUT */
@@ -450,6 +440,18 @@ form button:hover {
     margin-top: 1rem;
   }
 
+  .sidebar .name {
+    font-size: 2rem;
+  }
+
+  .sidebar .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .sidebar .intro {
+    font-size: 1rem;
+  }
+
   .wrapper {
     padding: 0 1rem; /* narrower gutters on mobile */
   }
@@ -472,9 +474,9 @@ form button:hover {
   }
 
   .experience-card {
-    width: 100%;        /* Let it fill the container */
-    margin: 1rem 0;     /* Minimal margin on top/bottom, no side margin */
-    padding: 0.5rem;    /* Enough padding so text is comfortable */
+    width: 100%; /* Let it fill the container */
+    margin: 1rem 0; /* Minimal margin on top/bottom, no side margin */
+    padding: 0.5rem; /* Enough padding so text is comfortable */
     margin-bottom: 2rem;
   }
 
@@ -486,7 +488,7 @@ form button:hover {
   }
 
   .section-heading {
-    display: block;      /* show on mobile */
+    display: block; /* show on mobile */
     margin: 2rem 0 1rem;
     font-size: 1.25rem;
     font-weight: 700;
@@ -494,6 +496,13 @@ form button:hover {
     text-transform: uppercase;
   }
 
+  #contact {
+    margin-top: 3rem;
+    max-width: 600px; /* Limit form width if desired */
+    padding: 0rem;
+
+
+  }
 }
 
 
