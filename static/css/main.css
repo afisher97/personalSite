@@ -138,6 +138,12 @@ body::before {
   margin-top: auto; /* pushes this element to the bottom */
   display: flex;
   gap: 1rem;       /* space between icons */
+  font-size: 0;
+}
+
+/* Font Awesome icons: */
+.sidebar-social .social-link i {
+  font-size: 24px;   /* same dimension for all icons */
 }
 
 
@@ -150,6 +156,21 @@ body::before {
 
 .sidebar-social .social-link:hover {
   color: #ccd6f6;         /* accent color on hover */
+}
+
+  .minecraft-axe-icon {
+  width: 24px;       /* Set the icon width */
+  height: 24px;      /* Set the icon height */
+    display: inline-block;
+  vertical-align: middle; /* Align with other inline icons */
+    filter: none;
+  transition: filter 0.3s; /* smooth transition */
+
+}
+
+.sidebar-social .minecraft-axe-icon:hover {
+  /* Increase brightness on hover */
+  filter: brightness(1.8);
 }
 
 
@@ -404,6 +425,7 @@ form button:hover {
 
 
 
+
 /* RESPONSIVE: stack columns on small screens */
 @media (max-width: 768px) {
 
@@ -503,7 +525,9 @@ form button:hover {
 
 
   }
+
 }
+
 
 
 @media (max-width: 1024px) {
