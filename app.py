@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+import os
 
 app = Flask(__name__)
 
@@ -24,4 +25,8 @@ def contact():
     return redirect(url_for("home"))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Render sets PORT; default to 5000 locally
+    port = int(os.environ.get("PORT", 5000))
+    # Only turn on debug when FLASK_ENV=development (e.g. locally)
+    debug = os.environ.get("FLASK_ENV") == "development"
+    app.run(host="0.0.0.0", port=port, debug=debug)
