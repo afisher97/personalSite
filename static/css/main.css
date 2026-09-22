@@ -10,7 +10,8 @@ html {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
   background-color: #081526; /* Dark background */
   color: #ccd6f6;            /* Light text */
   /* Star image as the background */
@@ -32,6 +33,21 @@ body::before {
   background: rgba(0, 0, 0, 0.8); /* dark overlay, adjust opacity as needed */
   pointer-events: none; /* let clicks pass through to the page */
   z-index: -1;          /* or 0, depending on your layout */
+}
+
+/* Cursor spotlight - sits above the dark overlay, below the content */
+.spotlight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(600px at var(--x, 50%) var(--y, 50%), rgba(100, 140, 255, 0.12), transparent 80%);
+}
+
+.spotlight.visible {
+  opacity: 1;
 }
 
 /* 1. Wrapper: sets up a max-width and centers it in the browser */
@@ -237,23 +253,37 @@ form button:hover {
   margin-bottom: 1rem;
 }
 
-.nav-link {
+.sidebar nav ul li a.nav-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: #8892b0; /* default link color */
-  text-decoration: none;
-  transition: color 0.2s ease;
-
 }
 
-
-/* Hover highlight */
-.nav-link:hover {
-  color: #ffffff; /* bright white on hover */
+/* Indicator line in front of each nav link - grows on hover/active */
+.nav-link::before {
+  content: "";
+  display: inline-block;
+  width: 2rem;
+  height: 1px;
+  margin-right: 1rem;
+  background-color: #8892b0;
+  transition: width 0.2s ease, background-color 0.2s ease;
 }
 
-/* Optional: Active link style (when a section is “active”) */
-.nav-link.active {
-  color: #ffffff; /* or an accent color, e.g. #64ffda */
-  font-weight: bold; /* make it stand out */
+/* Hover highlight + active section */
+.sidebar nav ul li a.nav-link:hover,
+.sidebar nav ul li a.nav-link.active {
+  color: #ffffff;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+  width: 4rem;
+  background-color: #ffffff;
 }
 
 
@@ -266,10 +296,63 @@ form button:hover {
 /* The outer card that includes date + details */
 .experience-card {
   /*background-color: #112240; /* Lighter than main bg */
+  position: relative; /* anchor for the full-card link overlay */
   border-radius: 8px;
   padding: 1.5rem 2rem;
   margin-bottom: 2rem;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
+}
+
+/* Dim the other cards while one is hovered (desktop only) */
+@media (hover: hover) and (min-width: 769px) {
+  .experience-list:hover .experience-card:not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+/* Title link - its ::after stretches over the whole card so the card is clickable */
+.card-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+}
+
+.arrow {
+  display: inline-block;
+  font-size: 0.9em;
+  transition: transform 0.2s ease;
+}
+
+.experience-card:hover .card-link,
+.card-link:focus-visible {
+  color: #FCD25A;
+}
+
+.experience-card:hover .arrow,
+.resume-link:hover .arrow {
+  transform: translate(3px, -3px);
+}
+
+/* Full resume link below the experience cards */
+.resume-link {
+  display: inline-block;
+  margin-left: 2rem;
+  color: #ccd6f6;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.resume-link:hover {
+  color: #FCD25A;
+  border-bottom-color: #FCD25A;
 }
 
 /* Hover effect for the card */
@@ -279,25 +362,23 @@ form button:hover {
   transform: translateY(-2px);
 }
 
-/* The inner content: 2 columns on desktop */
+/* The inner content: date stacked above details */
 .card-content {
   display: flex;
-  align-items: flex-start; /* Align date & details at the top */
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-/* Left side: date */
+/* Top: date */
 .date {
-  width: 120px;        /* or 100px, adjust as desired */
-  text-align: right;   /* align date text on the right edge */
-  margin-right: 2rem;  /* space between date and details */
-  color: #ccd6f6;      /* accent color */
+  color: #ccd6f6;
   font-size: 0.875rem; /* ~14px */
-  flex-shrink: 0;      /* so it won't shrink on narrower screens */
+  margin-bottom: 0.5rem;
 }
 
-/* Right side: job details */
+/* Below: job details */
 .details {
-  flex: 1; /* take remaining space */
+  width: 100%;
 }
 
 .details h3 {
@@ -321,6 +402,8 @@ form button:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem; /* space between bubbles */
+  position: relative;
+  z-index: 1; /* keep pill hover above the card link overlay */
 }
 
 .skill-list li {
@@ -341,25 +424,7 @@ form button:hover {
   color: #081526;            /* your dark navy text color */
 }
 
-/* Experience card section */
-  .card-content {
-    /* Instead of side-by-side columns, stack them */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  /* Override the fixed width and right-aligned text */
-  .date {
-    width: auto;
-    text-align: left;      /* Or center, if you prefer */
-    margin-right: 0;       /* Remove the desktop spacing */
-    margin-bottom: 0.5rem; /* Add a little space below the date */
-  }
-
-
-
-  /* CONTACT SECTION STYLES */
+/* CONTACT SECTION STYLES */
 #contact {
   margin-top: 3rem;
   max-width: 600px;     /* Limit form width if desired */
@@ -500,6 +565,10 @@ form button:hover {
     margin: 1rem 0; /* Minimal margin on top/bottom, no side margin */
     padding: 0.5rem; /* Enough padding so text is comfortable */
     margin-bottom: 2rem;
+  }
+
+  .resume-link {
+    margin-left: 0.5rem;
   }
 
   /* Disable the hover effect by resetting the hover styles */

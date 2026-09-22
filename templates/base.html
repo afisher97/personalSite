@@ -5,6 +5,9 @@
   <title>Avery Fisher</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -13,6 +16,9 @@
 
 <body>
 
+  <!-- Soft glow that follows the cursor (driven by spotlight.js) -->
+  <div class="spotlight" aria-hidden="true"></div>
+
   <!-- Main Wrapper for Desktop Layout - keeps the site centered and sets up two columns -->
   <div class="wrapper">
       <div class="site-content">
@@ -20,7 +26,7 @@
         <!-- Left Sidebar -->
         <aside class="sidebar">
             <h1 class="name">Avery Fisher</h1>
-            <h2 class="subtitle">Electrical Engineer</h2>
+            <h2 class="subtitle">Spacecraft Test Engineer</h2>
             <p class="intro">I like figuring out how things work and how to make them work better through hands-on design and problem-solving.</p>
             <nav class="nav">
              <ul>
@@ -62,16 +68,43 @@
             <h2></h2> <!-- Placeholder header to get scroll-spy to work correctly -->
             <h2 class="section-heading">EXPERIENCE</h2> <!-- Title for mobile, hidden in Desktop view -->
 
+            <!-- Wrapper lets hovering one card dim the others -->
+            <div class="experience-list">
+
             <!-- Single card: date + details in one container -->
             <div class="experience-card">
                 <div class="card-content">
                 <!-- Left side: date -->
                 <div class="date">
-                    2022 — Present
+                    2025 — Present
                 </div>
                 <!-- Right side: role details -->
                 <div class="details">
-                    <h3>Electrical Engineer II - Raytheon</h3>
+                    <h3><a class="card-link" href="https://www.blueorigin.com" target="_blank" rel="noopener noreferrer">Spacecraft Test Engineer III - Blue Origin <span class="arrow">↗</span></a></h3>
+                    <p>
+                    Lead vehicle-level integration testing for the Blue Ring spacecraft. Designed and built an AI-assisted harness test-mapping tool using graph-based signal-chain analysis that auto-generates validated CIRRIS test files across 23,000+ vehicle connections, replacing a multi-month manual wire-tracing effort and delivering ~$400K in labor savings. Developed and led the Powered Safe-to-Mate campaign, authoring a 120+ operation procedure that caught defects box-level testing had missed. Authored and led test readiness reviews and built job aids and templates that let new engineers run test campaigns independently.
+                    </p>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>NetworkX</li>
+                        <li>AI-Assisted Tooling</li>
+                        <li>Integration &amp; Test</li>
+                        <li>Test Procedure Development</li>
+                        <li>Test Readiness Reviews</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="card-content">
+                <!-- Left side: date -->
+                <div class="date">
+                    2022 — 2025
+                </div>
+                <!-- Right side: role details -->
+                <div class="details">
+                    <h3><a class="card-link" href="https://www.rtx.com/raytheon" target="_blank" rel="noopener noreferrer">Electrical Engineer II - Raytheon <span class="arrow">↗</span></a></h3>
                     <p>
                     Led electrical engineering tasks through program transition from development into low-rate initial production, conducting root cause analysis and collaborating closely with design and supplier quality teams to resolve failures. Designed and implemented Python-based automation solutions. Facilitated cross-functional team communications, driving data-focused initiatives to increase yield and reduce field failures. Conducted multiple high-impact engineering investigations.
                     </p>
@@ -96,7 +129,7 @@
                 </div>
                 <!-- Right side: role details -->
                 <div class="details">
-                    <h3>Electrical Engineer I - Raytheon</h3>
+                    <h3><a class="card-link" href="https://www.rtx.com/raytheon" target="_blank" rel="noopener noreferrer">Electrical Engineer I - Raytheon <span class="arrow">↗</span></a></h3>
                     <p>
                     Developed and executed testing procedures for aircraft radar systems, including RF, digital, and power supply components. Diagnosed complex electrical issues using advanced test equipment, electrical schematics, and structured methodologies for rapid resolution. Deployed and maintained a radar signal processing test station to enhance testing efficiency. Provided specialized training and resources to technicians.
                     </p>
@@ -108,6 +141,12 @@
                     </div>
                 </div>
             </div>
+
+            </div> <!-- /experience-list -->
+
+            <a class="resume-link" href="{{ url_for('static', filename='Avery-Fisher-Resume.pdf') }}" target="_blank" rel="noopener noreferrer">
+                View Full Résumé <span class="arrow">↗</span>
+            </a>
 
         </section>
 
@@ -145,6 +184,7 @@
 
 <!-- Scripts -->
 <script src="{{ url_for('static', filename='js/scroll-spy.js') }}"></script>
+<script src="{{ url_for('static', filename='js/spotlight.js') }}"></script>
 
 
 

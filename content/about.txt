@@ -1,5 +1,5 @@
 
-I'm an engineer driven by curiosity, creativity, and a passion for solving challenging problems. Whether I'm coming up with new innovative solutions, troubleshooting complex systems, or getting hands-on with a new project, I'm always eager to learn and grow. Currently, I'm an Electrical Engineer at Raytheon, where I lead engineering tasks from development to production, optimizing systems through careful analysis and automation.
+I'm an engineer driven by curiosity, creativity, and a passion for solving challenging problems. Whether I'm coming up with new innovative solutions, troubleshooting complex systems, or getting hands-on with a new project, I'm always eager to learn and grow. Currently, I'm a Spacecraft Test Engineer at Blue Origin, where I lead vehicle-level integration testing and build Python and AI-assisted tools that take manual effort out of test campaigns.
 <br>
 Outside work, my engineering mindset blends into my hobbies. I enjoy modifying and working on vehicles, continually learning through hands-on experience. I'm also passionate about astrophotography. I enjoy spending nights capturing the photos of the night sky (the background image you're seeing is one of my shots!). Additionally, I built this website from scratch in Python as another outlet for creativity and learning.
 <br>
