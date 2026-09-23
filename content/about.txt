@@ -1,7 +1,5 @@
-
-I'm an engineer driven by curiosity, creativity, and a passion for solving challenging problems. Whether I'm coming up with new innovative solutions, troubleshooting complex systems, or getting hands-on with a new project, I'm always eager to learn and grow. Currently, I'm a Spacecraft Test Engineer at Blue Origin, where I lead vehicle-level integration testing and build Python and AI-assisted tools that take manual effort out of test campaigns.
+I've always been the person who needs to know how things work — and once I figure it out, I start thinking about how to make it work better. That curiosity led me to electrical engineering at Mississippi State, where I earned my bachelor's and later my master's while working full-time.
 <br>
-Outside work, my engineering mindset blends into my hobbies. I enjoy modifying and working on vehicles, continually learning through hands-on experience. I'm also passionate about astrophotography. I enjoy spending nights capturing the photos of the night sky (the background image you're seeing is one of my shots!). Additionally, I built this website from scratch in Python as another outlet for creativity and learning.
+It's also why I love testing. At Blue Origin, I help prove out spacecraft hardware before it flies, and I'm happiest when I can build a tool that makes the next test faster than the last.
 <br>
-Beyond engineering and photography, I am committed to continuous personal and professional growth. I earned my master's degree while working full-time. Additionally, I regularly experiment with coding and electronics projects at home, constantly seeking new challenges and opportunities to learn something new.
-<br>
+Away from work, I'm usually tinkering with electronics, working on my car, or out after dark doing astrophotography — the night sky behind this page is one of my shots. I built this site from scratch in Python, mostly to see how it's done.

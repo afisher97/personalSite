@@ -11,41 +11,42 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinkMap[sectionId] = link;
   });
 
+  // A section becomes active once its top scrolls above this line
+  // (fraction of viewport height). Works no matter how short a section is.
+  const ACTIVE_LINE = 0.3;
+
   let currentActive = null;
 
-  // Intersection Observer options
-  const observerOptions = {
-    root: null,
-    /*
-      rootMargin works like extra “padding” around the viewport.
-      Negative top margin => trigger earlier (when the section is ~X% down from the top).
-      Negative bottom margin => un-trigger earlier.
-      Tweak these numbers until the highlighting behavior feels right.
-    */
-    rootMargin: "-50% 0px -50% 0px",
-    threshold: 0 // we only need to know if it’s intersecting at all
-  };
+  function updateActive() {
+    // Default to the first section (top of page)
+    let activeId = sections[0].id;
 
-  // Create the observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const sectionId = entry.target.id;
+    const atBottom =
+      window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
 
-        // Only update highlight if we're actually in a new section
-        if (currentActive !== sectionId) {
-          // Remove 'active' from all nav links
-          navLinks.forEach(link => link.classList.remove("active"));
-          // Add 'active' to the link that matches this section
-          if (navLinkMap[sectionId]) {
-            navLinkMap[sectionId].classList.add("active");
-          }
-          currentActive = sectionId;
+    if (atBottom) {
+      // Short final sections may never reach the line, so force the last one
+      activeId = sections[sections.length - 1].id;
+    } else {
+      // Last section whose top is above the line wins
+      sections.forEach(section => {
+        if (section.getBoundingClientRect().top <= window.innerHeight * ACTIVE_LINE) {
+          activeId = section.id;
         }
-      }
-    });
-  }, observerOptions);
+      });
+    }
 
-  // Observe each section
-  sections.forEach(section => observer.observe(section));
+    // Only update highlight if we're actually in a new section
+    if (activeId !== currentActive) {
+      navLinks.forEach(link => link.classList.remove("active"));
+      if (navLinkMap[activeId]) {
+        navLinkMap[activeId].classList.add("active");
+      }
+      currentActive = activeId;
+    }
+  }
+
+  window.addEventListener("scroll", updateActive, { passive: true });
+  window.addEventListener("resize", updateActive);
+  updateActive();
 });
