@@ -5,6 +5,9 @@
   <title>Avery Fisher</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+  <link rel="icon" href="{{ url_for('static', filename='favicon-32.png') }}" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -146,9 +149,11 @@
 
             </div> <!-- /experience-list -->
 
+            <!-- Résumé link disabled for now - to re-enable, add the PDF back to static/ and uncomment
             <a class="resume-link" href="{{ url_for('static', filename='Avery-Fisher-Resume.pdf') }}" target="_blank" rel="noopener noreferrer">
                 View Full Résumé <span class="arrow">↗</span>
             </a>
+            -->
 
         </section>
 
